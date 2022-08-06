@@ -174,7 +174,8 @@ The library file used is *_sky130_fd_sc_hd_tt_025C_1v80.lib_*. The nomenclature 
 * 025C shows the temperature - 25 degree celsius
 * 1v80 shows the voltage - 1.8V
 
-image
+![image](https://user-images.githubusercontent.com/110079770/183258200-37385d07-9bfb-4158-b7c1-da0b0fd10a80.png)
+
 
 
 _SKY130 library file_
