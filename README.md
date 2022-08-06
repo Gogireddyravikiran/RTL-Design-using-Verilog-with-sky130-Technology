@@ -140,6 +140,31 @@ Now inside the yosys, type the following commands for synthesis
 
 Finally use "exit" command when you want to exit from yosys.  
 *Note: The present working directory should contain RTL design before invoking yosys.
+
+### Labs on Yosys introduction
+
+Invoking Yosys:
+![invoking yosys](https://user-images.githubusercontent.com/104454253/166099491-8ee3ad06-1b1e-4483-9451-2372f08aab9b.JPG)
+
+Snippet below illustrates reading .lib, design and choosing the module to synthesize:
+
+![yosys1](https://user-images.githubusercontent.com/104454253/166100005-8a2e45e9-2977-4743-b475-515996a046d9.JPG)
+
+**Generating Netlist**: The logic of good_mux will be realizable using gates in the sky130_fd_sc_hd__tt_025C_1v80.lib file.
+
+![yosys2](https://user-images.githubusercontent.com/104454253/166100160-7b8c5847-62b4-49e9-9a90-c4f4c8ff840f.JPG)
+
+Below is the snippet showing the synthesis results and synthesized circuit for multiplexer.
+
+![Yosys3](https://user-images.githubusercontent.com/104454253/166176463-19a38375-d3e8-42b4-8de1-65aaa3ecb35e.JPG)
+
+**Netlist Code**
+
+![yosys4](https://user-images.githubusercontent.com/104454253/166101176-50cf9b44-3ca7-4d1c-bb2e-392498d82ddd.JPG)
+
+**Simplified netlist code**: This code consisits of additional switch. To further simplify, we use below command
+
+![Yosys5](https://user-images.githubusercontent.com/104454253/166101451-5d963a17-4cb7-47fd-818d-c7d34df2665c.JPG)
 ---------
 
 ## Day 2
