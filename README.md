@@ -90,6 +90,7 @@ Use the below commands for simulation and view the waveform with iverilog and GT
 #### Introduction to Yosys:
 
 ```Synthesizer``` : Tool is used for converting the RTL to netlist.
+
 ```Yosys``` : It is the tool used to convert the RTL to Gate level netlist. 
 
 ### Synthesis Flow
