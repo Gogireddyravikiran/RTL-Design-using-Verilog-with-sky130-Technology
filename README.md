@@ -4,4 +4,4 @@
 * ### [Getting Started]
 * ### [Introduction to Verilog RTL Design & Synthesis]
 * ### [Introduction to Verilog RTL Design & Synthesis]
-* #### [Setting up libraries & lab instances]
+* * #### [Setting up libraries & lab instances]
