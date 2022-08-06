@@ -24,9 +24,9 @@
 
 The first day covers the basics of RTL Design, Testbench, Simulation and Synthesis. Open-Source softwares like iverilog (simulator) and YOSYS (Synthesis) are provided through remote access in the portal to practice labs.
 
-```RTL Design``` -  It consists of an actual verilog code / a set of verilog codes that have the functionality to meet the required design specifications of the circuit.
+```## RTL Design``` -  It consists of an actual verilog code / a set of verilog codes that have the functionality to meet the required design specifications of the circuit.
 
-```TestBench``` - Testbench is a setup that one uses to apply a set of stimuli (test-case vector) to check the functional working of the design file.
+```## TestBench``` - Testbench is a setup that one uses to apply a set of stimuli (test-case vector) to check the functional working of the design file.
 
 ![image](https://user-images.githubusercontent.com/110079770/183237263-c0a11a8a-eb1c-459f-a25e-a8dd25edfad3.png)
 ## NOTE
