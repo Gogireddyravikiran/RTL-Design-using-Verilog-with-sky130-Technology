@@ -70,7 +70,7 @@ After cloning the respective repositories in our lab instance, we perform a simu
 #### Introduction to Yosys:
 
 ```Synthesizer``` : Tool is used for converting the RTL to netlist.
-``Yosys``: It is the tool used to convert the RTL to Gate level netlist. 
+```Yosys``` : It is the tool used to convert the RTL to Gate level netlist. 
 
 
 
