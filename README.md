@@ -99,6 +99,30 @@ The synthesis tool being used is Yosys. The inputs for Yosys are the RTL design 
 The different flavours of same logic blocks(standard cells) allows these to be used in different applications. These flavours may work on different speeds. The faster the cell the more area and power required. The cell used depends on which parameter(s) is to be optimised.  
 Additionally different cells are required to meet the timing requirements. More about that is discussed in [Day 2](day-2).  
 
+For the below circuit the three factors are
+- Clock to Q of flipflop A
+- Propagation delay of combinational circuit
+- Setuptime of flipflop B
+![Timedelay circuit](https://user-images.githubusercontent.com/104454253/166098730-33bf0734-abec-466f-abe2-a2ac6813b5e0.JPG)
+
+The equation is as follows
+
+![Time](https://user-images.githubusercontent.com/104454253/166097710-2c1099e3-6323-496c-8eb7-12ee04c12096.JPG)
+
+As per the above equation, for a smaller propagation delay, we need faster cells.
+But again, why do we have faster cells? This is to ensure that there are no HOLD time violations at B flipflop.
+**This complete collection forms .lib**
+
+**Faster Cells vs Slower Cells**: 
+Load in digital circuit is of **Capacitence**. Faster the charging or dicharging of capacitance, lesser is the celll delay. However, for a quick charge/ discharge of capacitor, we need transistors capable of sourcing more current i.e, we need WIDE TRANSISTORS. 
+
+Wider transistors have lesser delay but consume more area and power. Narrow transistors are other way around. Faster cells come with a cost of area and power.
+
+**Selection of the Cells**: We'll need to guide the Synthesizer to choose the flavour of cells that is optimum for implementation of logic circuit. Keeping in view of previous observations of faster vs slower cells,to avoid hold time violations, larger circuits, sluggish circuits, we offer guidance to synthesizer in the form of **Constraints**.
+
+Below is an illustration of Synthesis.
+![image](https://user-images.githubusercontent.com/110079770/183248437-0bf2e4e9-9868-4919-a311-2de1a9d1de6b.png)
+
 First of all, Yosys tool is invoked in the terminal.
 
                 $ yosys
