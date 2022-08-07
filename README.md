@@ -183,11 +183,11 @@ Many times in complex systems, different parts of system are designed seperately
 * *Flat Synthesis* - Here all sub-modules are also expanded and the top module is sysnthesised in terms of standard cells. It has lower abstraction compared to hierarchial synthesis.
 Consider the example
 
-image
+![image](https://user-images.githubusercontent.com/110079770/183275030-d5610183-7d6a-455e-a0c6-c83eccc2155b.png)
 
 If this logic is synthesised noramlly it will do hierarchial synthesis. The netlist made following hierarchial synthesis is.
 
-image
+![image](https://user-images.githubusercontent.com/104474928/165771935-01eb40f5-4eab-42aa-a59d-1a5e7c1eb2c9.png)
 
 For flat synthesis an additional command needs to be added to the normal synthesis flow.
 
