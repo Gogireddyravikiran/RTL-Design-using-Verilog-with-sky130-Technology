@@ -63,7 +63,7 @@ We are given a default set of files and libraries shown below to work on using t
 
 ## verilog models:
 
-![image](https://user-images.githubusercontent.com/110079770/183237675-dff34548-9937-4549-91e0-eaf509cdfd07.png)
+![image](https://user-images.githubusercontent.com/110079770/183274639-a47cdc25-c0e3-40b7-a5ea-5aee282ec39c.png)
 
 ## Part 2 - Simulation using iverilog simulator - 2:1 multiplexer rtl design:
 
