@@ -142,16 +142,10 @@ Finally use "exit" command when you want to exit from yosys.
 ### Labs on Yosys introduction
 
 Invoking Yosys:
+
 ![image](https://user-images.githubusercontent.com/110079770/183258775-8b868edc-0597-45b5-8a0b-16246f971da7.png)
 
-
-![yosys commands](https://user-images.githubusercontent.com/104474928/165451008-4319c388-768f-41bd-98df-5c2d44dce68e.png)
-
-![Screenshot 2022-04-27 112503](https://user-images.githubusercontent.com/104474928/165451150-790f5155-796d-4f43-9d0d-3fc9450f6dd6.png)
-
-![Screenshot 2022-04-27 112536](https://user-images.githubusercontent.com/104474928/165451165-69a81772-6cd2-47c1-b825-8ef336fa150e.png)
-
-![netlist](https://user-images.githubusercontent.com/104474928/165451232-9b13fb5f-c3f5-4213-bfca-60eeaa9d916d.png)
+![image](https://user-images.githubusercontent.com/110079770/183274919-f9352765-8624-4f5d-a118-650f2009cf48.png)
 
 ### ```Netlist code```
 ![netlistcode](https://user-images.githubusercontent.com/104474928/165451249-091978a1-f314-489e-8f89-e8eb1845a0d5.png)
