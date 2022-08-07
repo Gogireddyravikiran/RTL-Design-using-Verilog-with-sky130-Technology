@@ -363,6 +363,9 @@ For example:
 _Ripple carry adder using for generate_
 ![image](https://user-images.githubusercontent.com/110079770/183278776-902475a9-a620-4f98-906e-00c7cba2fdd8.png)
 
+_Netlist Schematic_
+![image](https://user-images.githubusercontent.com/110079770/183287095-de7c898e-7f2d-420d-98d3-f153ce9fb3a3.png)
+
   
 ## Acknowledgement
 * [Kunal Ghosh](https://github.com/kunalg123)
