@@ -125,9 +125,7 @@ Below is an illustration of Synthesis.
 
 First of all, Yosys tool is invoked in the terminal.
 
-                $ yosys
-                
-![image](https://user-images.githubusercontent.com/110079770/183240959-1897ef03-32b9-4267-af9e-cbad9871b1f1.png)
+                $ yosys         
 
 Now inside the yosys, type the following commands for synthesis
 
@@ -146,23 +144,17 @@ Finally use "exit" command when you want to exit from yosys.
 Invoking Yosys:
 ![image](https://user-images.githubusercontent.com/110079770/183258775-8b868edc-0597-45b5-8a0b-16246f971da7.png)
 
-Snippet below illustrates reading .lib, design and choosing the module to synthesize:
 
+![yosys commands](https://user-images.githubusercontent.com/104474928/165451008-4319c388-768f-41bd-98df-5c2d44dce68e.png)
 
+![Screenshot 2022-04-27 112503](https://user-images.githubusercontent.com/104474928/165451150-790f5155-796d-4f43-9d0d-3fc9450f6dd6.png)
 
-**Generating Netlist**: The logic of good_mux will be realizable using gates in the sky130_fd_sc_hd__tt_025C_1v80.lib file.
+![Screenshot 2022-04-27 112536](https://user-images.githubusercontent.com/104474928/165451165-69a81772-6cd2-47c1-b825-8ef336fa150e.png)
 
+![netlist](https://user-images.githubusercontent.com/104474928/165451232-9b13fb5f-c3f5-4213-bfca-60eeaa9d916d.png)
 
-
-Below is the snippet showing the synthesis results and synthesized circuit for multiplexer.
-
-
-
-**Netlist Code**
-
-
-
-**Simplified netlist code**: This code consisits of additional switch. To further simplify, we use below command
+### ```Netlist code```
+![netlistcode](https://user-images.githubusercontent.com/104474928/165451249-091978a1-f314-489e-8f89-e8eb1845a0d5.png)
 
 
 ---------
