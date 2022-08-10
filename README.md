@@ -70,12 +70,15 @@ We are given a default set of files and libraries shown below to work on using t
 After cloning the respective repositories in our lab instance, we perform a simulation run of 2:1 multiplexer rtl file namely good_mux.v and its corresponding testbench file tb_good_mux.v to obtain .vcd files and analyze the waveform in gtkwave to see the change in output instances with respect to change in input values.
 
 ### verilog code for 2:1 mux:
+
 ![image](https://user-images.githubusercontent.com/110079770/183237816-018d7e3a-45b4-46c8-ba1a-6091756e60c3.png)
 
 ### Testbench for 2:1 mux:
+
 ![image](https://user-images.githubusercontent.com/110079770/183237845-297b85bb-e150-4b6b-ab2b-e0c12e101f66.png)
 
 ##### Commands for simulation
+
 Use the below commands for simulation and view the waveform with iverilog and GTKWave respectively.
 
         iverilog file_name.v testbench_name.v           //creates an executable file
@@ -83,6 +86,7 @@ Use the below commands for simulation and view the waveform with iverilog and GT
         gtkwave testbench_name.vcd                      //view vcd file in gtkwave viewer
 
 ### Simulation of the above waveform by using iverilog and gtkwave:
+
 ![image](https://user-images.githubusercontent.com/110079770/183237970-b246ccda-d324-4be4-a146-11cb0049f394.png)
 
 ## Part-3 Introduction to the Yosys and Logic Synthesis.
@@ -103,6 +107,7 @@ For the below circuit the three factors are
 - Clock to Q of flipflop A
 - Propagation delay of combinational circuit
 - Setuptime of flipflop B
+- 
 ![Timedelay circuit](https://user-images.githubusercontent.com/104454253/166098730-33bf0734-abec-466f-abe2-a2ac6813b5e0.JPG)
 
 The equation is as follows
@@ -121,6 +126,7 @@ Wider transistors have lesser delay but consume more area and power. Narrow tran
 **Selection of the Cells**: We'll need to guide the Synthesizer to choose the flavour of cells that is optimum for implementation of logic circuit. Keeping in view of previous observations of faster vs slower cells,to avoid hold time violations, larger circuits, sluggish circuits, we offer guidance to synthesizer in the form of **Constraints**.
 
 Below is an illustration of Synthesis.
+
 ![image](https://user-images.githubusercontent.com/110079770/183248437-0bf2e4e9-9868-4919-a311-2de1a9d1de6b.png)
 
 First of all, Yosys tool is invoked in the terminal.
@@ -148,6 +154,7 @@ Invoking Yosys:
 ![image](https://user-images.githubusercontent.com/110079770/183274919-f9352765-8624-4f5d-a118-650f2009cf48.png)
 
 ### ```Netlist code```
+
 ![netlistcode](https://user-images.githubusercontent.com/104474928/165451249-091978a1-f314-489e-8f89-e8eb1845a0d5.png)
 
 
@@ -181,9 +188,11 @@ These different flavours are named different within the library. For example, th
 Many times in complex systems, different parts of system are designed seperately as RTL blocks(sub-modules) which can later be combined to form the whole system(top module). In such cases the synthesis can be done in two ways:
 * *Hierarchial synthesis* - Here the top module is synthesised in terms of sub-modules. Only the higher level abstraction is required.
 * *Flat Synthesis* - Here all sub-modules are also expanded and the top module is sysnthesised in terms of standard cells. It has lower abstraction compared to hierarchial synthesis.
+
 Consider the example
 
 ![image](https://user-images.githubusercontent.com/110079770/183275030-d5610183-7d6a-455e-a0c6-c83eccc2155b.png)
+
 ![image](https://user-images.githubusercontent.com/110079770/183275281-dc38b9c0-b69b-4817-8f48-89920b378324.png)
 
 
@@ -207,33 +216,42 @@ In the HDL code the asynchronous and  synchronous reset can be distinguished by 
 
 
 D flipflop with synchronous reset.
+
 ![image](https://user-images.githubusercontent.com/110079770/183275491-38dccd26-687f-432f-aa36-bb168b90372d.png)
+
 ![image](https://user-images.githubusercontent.com/110079770/183275554-adb19eba-5c40-4a8a-8cd4-d0ba49aee051.png)
 
 
 D flipflop with asynchronous reset. 
+
 ![image](https://user-images.githubusercontent.com/110079770/183275527-1bea1279-6577-4df5-924f-2274168d3e8d.png)
+
 ![image](https://user-images.githubusercontent.com/110079770/183275634-4d6e48b3-0f4e-486f-8752-e313cd0ce8d4.png)
 
 ---------
  ## Day 3
  The synthesis tool comes with many features. One of such features which has a huge impact on design is _optimisation_. The tool does optimisation on the logic (RTL design). Usually these optimisation are done to obtain least hardware and omit unwanted components.  
  ### Combinational Logic Optimisations
- In designs containing complex combinational logic, most of the time certain components are not reflected in the output and hence are considered _useless_. Such parts are removed by the tool. Sometimes sub-modules within a top module which does not affect the output may also be removed.    
+ In designs containing complex combinational logic, most of the time certain components are not reflected in the output and hence are considered _useless_. Such parts are removed by the tool. Sometimes sub-modules within a top module which does not affect the output may also be removed. 
+ 
  Consider the example:  
+ 
  ![image](https://user-images.githubusercontent.com/110079770/183275671-df9f75b0-78c3-43f4-9a18-20535e333e16.png)
 
  
  
  From the boolean logic for this RTL, it is clear that "b" input is not reflected on the output. Hence the synthesised netlist should optimisations. This becomes clear from the netlist given below.
+ 
  ![image](https://user-images.githubusercontent.com/110079770/183275736-5751b9a7-6f4a-4270-80dd-3c896d394233.png)
 
  
  Now consider a combinational circuit written as sub-modules.
+ 
  ![image](https://user-images.githubusercontent.com/110079770/183275771-d75f19fa-c167-4b3a-a625-2d7821fb2773.png)
 
  
  The optimised netlist obtained is:  
+ 
  ![image](https://user-images.githubusercontent.com/110079770/183275825-55b0a27f-9097-4191-9b61-f333de51e2d1.png)
 
  
@@ -241,15 +259,19 @@ D flipflop with asynchronous reset.
 The most common optimisations in sequential circuits are optimisations for constant and optimising unused outputs.
   
 For optimisation of constants in sequential circuits, consider below example.  
+
 ![image](https://user-images.githubusercontent.com/110079770/183275858-282c6005-d30c-47f8-a5ff-e254cdef1331.png)
 
 After simulating with the help of testbench the waveform obtained is:
+
 ![image](https://user-images.githubusercontent.com/110079770/183275914-59f0958b-88dc-49db-895a-56df79c0a376.png)
 
 From the waveform it is clear the output remains constant for all cases and hence can be optimised. The synthesis report obtained is given below.
+
 ![image](https://user-images.githubusercontent.com/110079770/183276098-50d04fd3-d9b3-4d3c-8498-034dd475a0bd.png)
 
 Now consider the next example for optimisation of unused outputs in sequential circuits. 
+
 ![image](https://user-images.githubusercontent.com/110079770/183276152-6f66446d-b4d1-4b6c-baac-4c1666be1aee.png)
 
 ```_Waveform_ ``` 
@@ -257,6 +279,7 @@ Now consider the next example for optimisation of unused outputs in sequential c
 ![image](https://user-images.githubusercontent.com/110079770/183276209-5dd1d3fa-0047-4dd4-96b5-7b226f4f8f4e.png)  
 
 From the waveform it is clear that output is only dependant single bit of the counter. Hence the other flops can be optimised.
+
 ![image](https://user-images.githubusercontent.com/110079770/183276269-6c34c8df-fded-4e59-9267-308a510df58a.png)
 
 ![image](https://user-images.githubusercontent.com/110079770/183276252-b90525ef-681a-4058-9054-5d3adcf72bff.png)
@@ -274,20 +297,26 @@ This can occur due to a variety of reasons including:
 * non-standard verilog coding  
 
 Lets see an example of such sythesis simulation mismatch
+
 ![image](https://user-images.githubusercontent.com/110079770/183276309-48346236-af22-4627-8a19-ba08b214b568.png)
+
 ![image](https://user-images.githubusercontent.com/110079770/183277464-1b1534e4-39fe-446c-92e8-37c246a0c317.png)
 
 
 This is the RTL code for a mux, but the sensitivity list shows only "sel". This means the output will only change when there is a change in "sel" signal. This is obviously not the desired logic and will cause synthesis simulation mismatch due to the missing elements in sensitivity list.  
 The waveform obtained from RTL simulation is :
+
 ![image](https://user-images.githubusercontent.com/110079770/183276396-4f0c3341-8bc8-4ab0-b35e-eed97854e573.png)
 
 compared to the waveform from GLS
+
 ![image](https://user-images.githubusercontent.com/110079770/183278175-be618118-1980-4376-a91a-da77f774711a.png)
 
 
 _Note: The verilog models of standard cells must also be called on the iverilog for GLS._
+
 ### Blocking and Non Blocking Statements
+
 In verilog HDL, there are two types of assignment operators:
 * <= this assignment creates a non-blocking statement
 * =  this assignment creates a blocking statement
@@ -297,20 +326,26 @@ While using blocking statements if care is not taken it could result in synthesi
 
 
 _RTL simulation waveform_
+
 ![image](https://user-images.githubusercontent.com/110079770/183278240-f2e71e38-f22e-4052-9ae7-65eeb249fb90.png)
 
 _NETLIST_
+
 ![image](https://user-images.githubusercontent.com/110079770/183278294-f1d04e8a-a5b0-4d1d-a6e1-760df3f9ba7c.png)
 
 _GENERATED NETLIST CODE_
+
 ![image](https://user-images.githubusercontent.com/110079770/183278378-1d71d66b-3df2-4b81-9b87-0f12109feaee.png)
 
 
 _GLS waveform_
+
 ![image](https://user-images.githubusercontent.com/110079770/183278433-7b7b0cbe-c40a-4ea5-8e75-fa595905f5d7.png)
 
 ## Day 5
+
 ### IF and CASE statements
+
 The _IF_ and _CASE_ statements are the conditional statements present in verilog HDL.  
 If statements-    
               
@@ -353,18 +388,24 @@ Similarly unwanted latches are inferred for incomplete case statements as well.
 
 
 ### FOR loop and FOR GENERATE
+
 For loops are always written inside "always" statements. The syntax for "for" loop is similar to that in C. For loops are used where multiple evaluating statements need to be run.  
+
 For example:  
+
 _Demux using for loop_
+
 ![image](https://user-images.githubusercontent.com/110079770/183278759-1f71db70-e211-4109-99b5-4bb9dee3df66.png)
 
-For generate statements are written outside "always" statement. It is used for instantiating a module multiple times within an RTL.  
+For generate statements are written outside "always" statement. It is used for instantiating a module multiple times within an RTL. 
+
 For example:  
+
 _Ripple carry adder using for generate_
+
 ![image](https://user-images.githubusercontent.com/110079770/183278776-902475a9-a620-4f98-906e-00c7cba2fdd8.png)
 
 _Netlist Schematic_
-
 
 ![image](https://user-images.githubusercontent.com/110079770/183287095-de7c898e-7f2d-420d-98d3-f153ce9fb3a3.png)
 
